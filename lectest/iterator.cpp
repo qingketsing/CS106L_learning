@@ -76,6 +76,12 @@ int main(){
     }else{
         cout << "Did not find " << ELEM_TO_FIND << " in the set." << endl;
     }
+    set<int>::iterator iter = s.lower_bound(4);
+    set<int>::iterator end = s.upper_bound(8);
+    for(;iter != end;++iter){
+        cout << *iter << " ";
+    }
+    cout << endl;
     return 0;
 }
 
@@ -99,7 +105,7 @@ map<string,int> GetUserInput(){
 void printVector(const vector<int>& vec){
     for(auto p : vec){
         cout << p << ' ';
+        cout << endl;
+        return;
     }
-    cout << endl;
-    return;
 }
